@@ -6,7 +6,8 @@ public class InsertionSort implements AbstractSort{
 
 	public List sort(List array) {
 		int temp;
-		for(int i = 0 ; i < array.size(); i++){
+		int size = array.size();
+		for(int i = 1 ; i < size; i++){
 			for(int j = i; j > 0; j--){
 				if (array.elementAt(j) < array.elementAt(j - 1)){
 					temp = array.elementAt(j);

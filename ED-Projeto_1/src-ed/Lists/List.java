@@ -62,5 +62,5 @@ public interface List {
 	
 	public void show(boolean reverse);
 	
-	public void swap(int smaller, int index, int i);
+	public void swap(int smaller, int index, int index2);
 }

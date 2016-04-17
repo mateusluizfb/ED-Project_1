@@ -16,6 +16,10 @@ class LinkedNode {
 		next = null;
 	}
 	
+	public void setValue(int value){
+		this.value = value;
+	}
+	
 	public void setNext(LinkedNode next) {
 		this.next = next;
 	}
@@ -137,8 +141,25 @@ public class LinkedList implements List {
 
 
 	@Override
-	public void swap(int smaller, int index, int i) {
-		throw new NotImplementedYet();
+	public void swap(int smaller, int index, int index2) {
+		LinkedNode temp = head;
+		LinkedNode temp2 = head;
+		int i = 0;
+		
+		while(i != index){
+			temp = temp.getNext();
+			i++;
+		}
+		
+		i = 0;
+		while(i != index2){
+			temp2 = temp2.getNext();
+			i++;
+		}
+		
+		temp.setValue(temp2.getValue());
+		temp2.setValue(smaller);
+		
 	}
 	
 }
