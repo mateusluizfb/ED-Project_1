@@ -107,4 +107,10 @@ public class DLinkedList implements List {
 	public void swap(int smaller, int index, int i) {
 		throw new NotImplementedYet();
 	}
+
+	@Override
+	public void addAll(int[] array) {
+		// TODO Auto-generated method stub
+		
+	}
 }

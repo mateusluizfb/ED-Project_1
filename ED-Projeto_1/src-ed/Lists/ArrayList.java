@@ -91,6 +91,11 @@ public class ArrayList implements List{
 		elements[index] = elements[index2];
 		elements[index2] = smaller;
 	}
+	@Override
+	public void addAll(int[] array) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	
 }

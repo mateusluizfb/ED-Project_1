@@ -159,7 +159,19 @@ public class LinkedList implements List {
 		
 		temp.setValue(temp2.getValue());
 		temp2.setValue(smaller);
+	}
+
+
+	@Override
+	public void addAll(int[] array) {
+		LinkedNode temp = head;
+		
+		for(int i = 0; i < size; i++){
+			temp.setValue(array[i]);
+			temp = temp.getNext();
+		}
 		
 	}
+	
 	
 }
