@@ -31,7 +31,7 @@ public class testSelectionSort extends TestCase {
 	
 	public void testSort(){
 		
-		SelectionSort ss = new SelectionSort();
+		AbstractSort ss = new SelectionSort();
 		
 		ss.sort(array);
 		

@@ -62,7 +62,7 @@ public interface List {
 	
 	public void show(boolean reverse);
 	
-	public void swap(int smaller, int index, int index2);
+	public void swap(int index, int index2);
 	
 	public void addAll(int[] array);
 }

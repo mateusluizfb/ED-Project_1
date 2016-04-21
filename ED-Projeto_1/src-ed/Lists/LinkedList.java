@@ -141,13 +141,15 @@ public class LinkedList implements List {
 
 
 	@Override
-	public void swap(int smaller, int index, int index2) {
+	public void swap(int index, int index2) {
 		LinkedNode temp = head;
 		LinkedNode temp2 = head;
+		int smaller = 0;
 		int i = 0;
 		
 		while(i != index){
 			temp = temp.getNext();
+			smaller = temp.getValue();
 			i++;
 		}
 		
@@ -159,6 +161,11 @@ public class LinkedList implements List {
 		
 		temp.setValue(temp2.getValue());
 		temp2.setValue(smaller);
+	}
+	
+	public void setValue(int value){
+		LinkedNode temp = head;
+		temp.setValue(value);
 	}
 
 

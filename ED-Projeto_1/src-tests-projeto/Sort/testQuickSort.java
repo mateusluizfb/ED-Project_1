@@ -6,7 +6,7 @@ import Lists.LinkedList;
 import Lists.List;
 import junit.framework.TestCase;
 
-public class testMergeSort extends TestCase {
+public class testQuickSort extends TestCase {
 	
 	List array = new LinkedList();
 	
@@ -29,15 +29,19 @@ public class testMergeSort extends TestCase {
 	
 	public void testSort(){
 		
-		AbstractSort ms = new MergeSortArrayAuxiliar();
+		AbstractSort qs = new QuickSortPivotUltimo();
 		
-		ms.sort(array);
+		qs.sort(array);
 		
-		assertEquals(1, array.elementAt(0));
-		assertEquals(2, array.elementAt(1));
-		assertEquals(3, array.elementAt(2));
-		assertEquals(4, array.elementAt(3));
+		array.show(false);
 		
+//		assertEquals(1, array.elementAt(0));
+//		assertEquals(2, array.elementAt(1));
+//		assertEquals(3, array.elementAt(2));
+//		assertEquals(4, array.elementAt(3));
+//		
 		
 	}
+	
+	
 }

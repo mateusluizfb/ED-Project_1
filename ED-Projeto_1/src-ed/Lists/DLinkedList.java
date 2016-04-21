@@ -104,7 +104,7 @@ public class DLinkedList implements List {
 	}
 
 	@Override
-	public void swap(int smaller, int index, int i) {
+	public void swap(int index, int i) {
 		throw new NotImplementedYet();
 	}
 

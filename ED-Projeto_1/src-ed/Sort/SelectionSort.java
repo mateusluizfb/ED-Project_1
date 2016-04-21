@@ -14,7 +14,7 @@ public class SelectionSort implements AbstractSort{
                     index = j;
                 }
             }           
-            array.swap(array.elementAt(index), index, i);
+            array.swap(index, i);
         }
     
         return array;

@@ -40,6 +40,7 @@ public class testInsertionSort extends TestCase {
 		assertEquals(2, array.elementAt(1));
 		assertEquals(3, array.elementAt(2));
 		assertEquals(4, array.elementAt(3));
+		
 	}
 	
 	

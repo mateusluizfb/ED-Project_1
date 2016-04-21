@@ -10,7 +10,7 @@ import Sort.AbstractSort;
 import Sort.InsertionSort;
 import Lists.LinkedList;
 import Lists.List;
-import Sort.MergeSort;
+import Sort.MergeSortArrayAuxiliar;
 
 
 /**
@@ -92,7 +92,7 @@ public class Benchmark {
 		// implementacoes, onde cada implementacao precisa
 		// implementar a interface AbstractSort.
 
-		AbstractSort arr[] = { new InsertionSort(), new MergeSort() };
+		AbstractSort arr[] = { new InsertionSort(), new MergeSortArrayAuxiliar() };
 
 		String nomeArquivo = "bench-" + System.currentTimeMillis();
 		Path arquivo = Paths.get(nomeArquivo);
