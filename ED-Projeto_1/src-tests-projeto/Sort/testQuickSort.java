@@ -32,14 +32,12 @@ public class testQuickSort extends TestCase {
 		AbstractSort qs = new QuickSortPivotUltimo();
 		
 		qs.sort(array);
+				
+		assertEquals(1, array.elementAt(0));
+		assertEquals(2, array.elementAt(1));
+		assertEquals(3, array.elementAt(2));
+		assertEquals(4, array.elementAt(3));
 		
-		array.show(false);
-		
-//		assertEquals(1, array.elementAt(0));
-//		assertEquals(2, array.elementAt(1));
-//		assertEquals(3, array.elementAt(2));
-//		assertEquals(4, array.elementAt(3));
-//		
 		
 	}
 	

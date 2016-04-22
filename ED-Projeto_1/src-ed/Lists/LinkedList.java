@@ -114,7 +114,7 @@ public class LinkedList implements List {
 			//ao que deve ser excluido. 
 			temp.setNext(temp.getNext().getNext());		
 		}		
-		size = size -1;
+		size--;
 	}
 
 

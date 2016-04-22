@@ -34,18 +34,21 @@ class DLinkedNode {
 
 public class DLinkedList implements List {
 	private int size; 
+	private DLinkedNode tail;
 	private DLinkedNode head; 
 	
 	public DLinkedList() {
 		size = 0;
 		head = null;
+		tail = null;
 	}
 	
 	@Override
 	public void insert(int pos, int value) {
-		if(pos >= 0 && pos <= size) {
+		if(pos > 0 || pos <= size) {
 			if(size == 0) {
 				head = new DLinkedNode(value);
+				tail = head;
 			}
 			else if(pos == 0) {
 				DLinkedNode newNode = new DLinkedNode(value);
@@ -64,6 +67,8 @@ public class DLinkedList implements List {
 				temp.setNext(newNode);
 				if(pos < size) {
 					newNode.getNext().setPrevious(newNode);
+				} else {
+					tail = newNode;
 				}
 			}
 			size++;
@@ -75,31 +80,75 @@ public class DLinkedList implements List {
 
 	@Override
 	public int find(int value) {
-		// TODO Auto-generated method stub
-		return 0;
+		DLinkedNode temp = head;
+		for (int i = 0; i < size; i++){
+			if(temp.getValue() == value){
+				return i;
+			}
+		}
+		throw new InvalidArgumentException();
 	}
 
 	@Override
 	public int elementAt(int pos) throws InvalidArgumentException {
-		// TODO Auto-generated method stub
-		return 0;
+		if (pos > 0 || pos <= size){
+			DLinkedNode temp = head;
+			for(int i = 0; i < pos; i++){
+				temp = temp.getNext();
+			}
+			return temp.getValue();
+		}
+		throw new InvalidArgumentException();
 	}
 
 	@Override
 	public void remove(int pos) throws InvalidArgumentException {
-		// TODO Auto-generated method stub
-		
+		if (pos > 0 || pos <= size){
+			if (pos == 0){
+				head = head.getNext();
+			} else {
+				DLinkedNode temp = head;
+				DLinkedNode temp2 = head;
+				for(int i = 0; i < pos - 1; i++){
+					temp = temp.getNext();
+				}
+				for(int i = 0; i < pos + 1; i++){
+					temp2 = temp2.getNext();
+				}
+				temp.setNext(temp.getNext().getNext());
+				if (temp.getPrevious().getPrevious() != null){
+					temp2.setPrevious(temp2.getPrevious().getPrevious());
+				}
+				if (pos == size){
+					tail = temp;
+				}
+			}
+			size--;
+		} else {
+			throw new InvalidArgumentException();
+		}
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
 	@Override
 	public void show(boolean reverse) {
-		// TODO Auto-generated method stub
+		if (reverse){
+			DLinkedNode temp = tail;
+			while(temp != null){
+				System.out.println(temp.getValue());
+				temp = temp.getPrevious();
+			}
+		} else {
+			DLinkedNode temp = head;
+			for (int i = 0; i < size; i++){
+				System.out.println(temp.getValue());
+				temp = temp.getNext();
+			}
+		}
 		
 	}
 
@@ -111,6 +160,5 @@ public class DLinkedList implements List {
 	@Override
 	public void addAll(int[] array) {
 		// TODO Auto-generated method stub
-		
 	}
 }
