@@ -87,9 +87,15 @@ public class ArrayList implements List{
 		}
 	}
 
-	public void swap(int smaller, int index, int index2){
+	public void swap(int index, int index2){
+		int smaller = elements[index];
 		elements[index] = elements[index2];
 		elements[index2] = smaller;
+	}
+	@Override
+	public void addAll(int[] array) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

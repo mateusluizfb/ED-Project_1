@@ -1,26 +1,24 @@
 package Sort;
-public class SelectionSort{
 
-	public void sort(int[] array){
+import Lists.List;
+
+public class SelectionSort implements AbstractSort{
+
+	public List sort(List array){
         int index;
-        
-        for (int i = 0; i < array.length - 1; i++){
+        int size = array.size();
+        for (int i = 0; i < size - 1; i++){
             index = i;
-            for (int j = i + 1; j < array.length; j++){
-                if (array[j] < array[index]){
+            for (int j = i + 1; j < size; j++){
+                if (array.elementAt(j) < array.elementAt(index)){
                     index = j;
                 }
-            }
-      
-            int smaller = array[index]; 
-            array[index] = array[i];
-            array[i] = smaller;
+            }           
+            array.swap(index, i);
         }
+    
+        return array;
     }
 	
-	public void show(int[] array){
-		for(int i=0; i < array.length; i++){
-			System.out.print(array[i] + " ");
-		}
-	}
+	
 }

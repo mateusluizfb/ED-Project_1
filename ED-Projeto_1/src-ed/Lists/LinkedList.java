@@ -16,6 +16,10 @@ class LinkedNode {
 		next = null;
 	}
 	
+	public void setValue(int value){
+		this.value = value;
+	}
+	
 	public void setNext(LinkedNode next) {
 		this.next = next;
 	}
@@ -110,7 +114,7 @@ public class LinkedList implements List {
 			//ao que deve ser excluido. 
 			temp.setNext(temp.getNext().getNext());		
 		}		
-		size = size -1;
+		size--;
 	}
 
 
@@ -137,8 +141,43 @@ public class LinkedList implements List {
 
 
 	@Override
-	public void swap(int smaller, int index, int i) {
-		throw new NotImplementedYet();
+	public void swap(int index, int index2) {
+		LinkedNode temp = head;
+		LinkedNode temp2 = head;
+		int i = 0;
+		
+		while(i != index){
+			temp = temp.getNext();
+			i++;
+		}
+		int smaller = temp.getValue();
+		
+		i = 0;
+		while(i != index2){
+			temp2 = temp2.getNext();
+			i++;
+		}
+		
+		temp.setValue(temp2.getValue());
+		temp2.setValue(smaller);
 	}
+	
+	public void setValue(int value){
+		LinkedNode temp = head;
+		temp.setValue(value);
+	}
+
+
+	@Override
+	public void addAll(int[] array) {
+		LinkedNode temp = head;
+		
+		for(int i = 0; i < size; i++){
+			temp.setValue(array[i]);
+			temp = temp.getNext();
+		}
+		
+	}
+	
 	
 }
