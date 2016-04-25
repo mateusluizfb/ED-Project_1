@@ -30,12 +30,16 @@ class DLinkedNode {
 	public int getValue() {
 		return value;
 	}
+	
+	public void setValue(int value){
+		this.value = value;
+	}
 }
 
 public class DLinkedList implements List {
-	private int size; 
-	private DLinkedNode tail;
-	private DLinkedNode head; 
+	protected int size; 
+	protected DLinkedNode tail;
+	protected DLinkedNode head; 
 	
 	public DLinkedList() {
 		size = 0;
@@ -148,17 +152,38 @@ public class DLinkedList implements List {
 				System.out.println(temp.getValue());
 				temp = temp.getNext();
 			}
-		}
-		
+		}		
 	}
 
 	@Override
-	public void swap(int index, int i) {
-		throw new NotImplementedYet();
+	public void swap(int index, int index2) {
+		DLinkedNode temp = head;
+		DLinkedNode temp2 = head;
+		int i = 0;
+		
+		while (i != index){
+			temp = temp.getNext();
+			i++;
+		}
+		int smaller = temp.getValue();
+		
+		i = 0;
+		while (i != index2){
+			temp = temp.getNext();
+			i++;
+		}
+		
+		temp.setValue(temp2.getValue());
+		temp2.setValue(smaller);
 	}
 
 	@Override
 	public void addAll(int[] array) {
-		// TODO Auto-generated method stub
+		DLinkedNode temp = head;
+		
+		for(int i = 0; i < size; i++){
+			temp.setValue(array[i]);
+			temp = temp.getNext();
+		}
 	}
 }

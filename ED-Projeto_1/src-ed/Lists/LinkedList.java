@@ -144,14 +144,13 @@ public class LinkedList implements List {
 	public void swap(int index, int index2) {
 		LinkedNode temp = head;
 		LinkedNode temp2 = head;
-		int smaller = 0;
 		int i = 0;
 		
 		while(i != index){
 			temp = temp.getNext();
-			smaller = temp.getValue();
 			i++;
 		}
+		int smaller = temp.getValue();
 		
 		i = 0;
 		while(i != index2){

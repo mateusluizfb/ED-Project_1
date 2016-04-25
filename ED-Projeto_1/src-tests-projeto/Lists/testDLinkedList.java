@@ -44,5 +44,23 @@ public class testDLinkedList extends TestCase {
 		list.remove(1);
 		assertEquals(2, list.elementAt(0));
 	}
+	
+	public void testSwap(){
+		
+		List list2 = new DLinkedList();
+		
+		list2.insert(0, 1);
+		list2.insert(1, 2);
+		list2.insert(2, 3);
+		list2.insert(3, 4);
+		
+		list2.swap(3, 0);
+		
+		assertEquals(4, list2.elementAt(0));
+		assertEquals(2, list2.elementAt(1));
+		assertEquals(3, list2.elementAt(2));
+		assertEquals(1, list2.elementAt(3));
+		
+	}
 
 }

@@ -22,5 +22,12 @@ public class testLinkedList extends TestCase {
 		assertEquals(3, list.elementAt(2));
 		
 	}
-
+	
+	public void testSwap(){
+		
+		list.swap(2, 1);
+		
+		list.show(false);
+		
+	}
 }
