@@ -1,4 +1,4 @@
-package BenchmarkAlgoritimos;
+package AlgorithmsBenchmark;
 
 import java.io.BufferedWriter;
 import java.nio.file.Files;

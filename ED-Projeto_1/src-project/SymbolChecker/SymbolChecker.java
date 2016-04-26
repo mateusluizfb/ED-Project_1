@@ -1,12 +1,12 @@
-package BalanceamentoDeSimbolos;
+package SymbolChecker;
 
 import Stack.StackChar;
 
-public class Bracket {
+public class SymbolChecker {
 	
 	private String input;
 	
-	public Bracket(String input){
+	public SymbolChecker(String input){
 		this.input = input;
 	}
 	

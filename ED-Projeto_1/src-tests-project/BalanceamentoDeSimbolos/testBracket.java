@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import SymbolChecker.SymbolChecker;
 import junit.framework.TestCase;
 
 public class testBracket extends TestCase {
@@ -21,7 +22,7 @@ public class testBracket extends TestCase {
 			e.printStackTrace();
 		}  
 		
-		Bracket check = new Bracket(bracket);
+		SymbolChecker check = new SymbolChecker(bracket);
 			
 		check.checker();
 		
