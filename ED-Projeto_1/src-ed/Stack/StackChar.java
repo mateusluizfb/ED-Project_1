@@ -15,8 +15,8 @@ public class StackChar{
 	}
 	
 
-	public void push(char c) {
-		elements[size] = c;
+	public void push(char parts) {
+		elements[size] = parts;
 		size++;
 	}
 

@@ -63,7 +63,7 @@ class Medicao {
  */
 public class Benchmark {
 	private static final int REPETICOES = 1;
-	private static final int AMOSTRAS[] = { 20, 100, 1000 };
+	private static final int AMOSTRAS[] = { 10000 };
 
 	/*
 	 * Gera uma lista de valores aleatorios entre zero e tamanhoAleatorio
