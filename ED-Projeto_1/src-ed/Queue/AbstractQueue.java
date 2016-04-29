@@ -2,6 +2,14 @@ package Queue;
 
 import Lists.List;
 
+/**
+ * Implementacao abstrata de uma Queue (Fila), a descricao de cada 
+ * metodo estah na documentacao da Intercade Queue 
+ *  
+ * Neste projeto iremos apenas usar a Queue do tipo primitivo 'int'
+ * @author MateusLuiz
+ */
+
 public abstract class AbstractQueue implements Queue {
 	
 	protected List elements;

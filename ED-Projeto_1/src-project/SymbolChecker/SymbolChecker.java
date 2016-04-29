@@ -35,9 +35,8 @@ public class SymbolChecker {
 							 (c == ')' && c2 == '(') ){
 							System.out.println(c2 + " matches with " + c);
 						} else {
-							System.out.println("Not Valid " + c2 + " and " + c);
+							System.out.println("Not Valid: " + c2 + " and " + c);
 						}
-						System.out.println("End");
 						break;
 					}
 				default: break;
@@ -45,6 +44,6 @@ public class SymbolChecker {
 		}
 		if (size == 0){
 			System.out.println("Stack empty");
-		}
+		} 
 	}
 }

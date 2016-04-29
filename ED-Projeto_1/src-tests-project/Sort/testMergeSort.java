@@ -29,7 +29,7 @@ public class testMergeSort extends TestCase {
 	
 	public void testSort(){
 		
-		AbstractSort ms = new MergeSortArrayAuxiliar();
+		AbstractSort ms = new MergeSort();
 		
 		ms.sort(array);
 		

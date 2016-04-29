@@ -1,4 +1,4 @@
-package BalanceamentoDeSimbolos;
+package SymbolChecker;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -41,7 +41,7 @@ public interface List {
 	
 	/**
 	 * Insere um valor (<code>value</code>) na posicao <code>pos</code>
-	 * @param pos    posicao na lista a ser adicionado o valor
+	 * @param pos  posicao na lista a ser adicionado o valor
 	 * @param value  valor a ser adicionado na lista. 
 	 * @throws InvalidArgumentException Caso <code>pos < 0</code> ou <code>pos > size() </code>
 	 */

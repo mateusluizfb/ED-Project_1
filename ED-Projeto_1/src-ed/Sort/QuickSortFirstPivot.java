@@ -2,7 +2,7 @@ package Sort;
 
 import Lists.List;
 
-public class QuickSortPivotUltimo implements AbstractSort {
+public class QuickSortFirstPivot implements AbstractSort {
 
 	private int[] array;
 	
@@ -22,8 +22,8 @@ public class QuickSortPivotUltimo implements AbstractSort {
 		if (right - left <= 0){
 			return;
 		} else {
-			// pivot sendo o ultimo elemento
-			int pivot = array[right];
+			// pivot being the first element
+			int pivot = array[left];
 			int partition = partition(left, right, pivot);
 			quickSort(left, partition - 1);
 			quickSort(partition + 1, right);
