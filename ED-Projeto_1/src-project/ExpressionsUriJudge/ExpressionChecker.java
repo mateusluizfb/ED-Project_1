@@ -1,10 +1,8 @@
 package ExpressionsUriJudge;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+import Lists.InvalidArgumentException;
 import Stack.Stack;
 import Stack.StackArrayList;
 
@@ -30,15 +28,20 @@ public class ExpressionChecker
 
 	      while (tokenizer.hasMoreTokens() == true){
 	         data = tokenizer.nextToken();
-	         if (check(data)){            
-	        	n2 = stack.pop();
-	        	n1 = stack.pop();
-	            result = result(data.charAt(0), n1, n2);
-	            stack.push (new Integer(result));
-	         } else {
-	            stack.push (new Integer(Integer.parseInt(data)));
+	         try{
+		         if (check(data)){            
+		        	n2 = stack.pop();
+		        	n1 = stack.pop();
+		            result = result(data.charAt(0), n1, n2);
+		            stack.push (new Integer(result));
+		         } else {
+		            stack.push (new Integer(Integer.parseInt(data)));
+		         }
+	         } catch (InvalidArgumentException e){
+	        	 throw new InvalidArgumentException("Invalid Expression");
 	         }
 	      }
+	      stack.clear();
 	      return result;
 	   }
 	   
@@ -60,27 +63,5 @@ public class ExpressionChecker
 
 	   private boolean check(String data){
 	      return ( data.equals("+") || data.equals("-") || data.equals("*") || data.equals("/") );
-	   }
-	
-	
-	public static void main(String[] args) {
-		
-		ExpressionChecker pe = new ExpressionChecker();
-		
-		InputStreamReader r=new InputStreamReader(System.in);  
-		BufferedReader br=new BufferedReader(r);  
-		String string = null;
-		  
-		System.out.println("Enter Expression");  
-		try {
-			string = br.readLine();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}  
-		
-		System.out.println(pe.compute(string));
-		
-		
-	}
-	
+	   }	
 }

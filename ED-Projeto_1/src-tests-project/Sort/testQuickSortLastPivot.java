@@ -6,7 +6,7 @@ import Lists.LinkedList;
 import Lists.List;
 import junit.framework.TestCase;
 
-public class testQuickSort extends TestCase {
+public class testQuickSortLastPivot extends TestCase {
 	
 	List array = new LinkedList();
 	
@@ -29,7 +29,7 @@ public class testQuickSort extends TestCase {
 	
 	public void testSort(){
 		
-		AbstractSort qs = new QuickSortPivotUltimo();
+		AbstractSort qs = new QuickSortLastPivot();
 		
 		qs.sort(array);
 				

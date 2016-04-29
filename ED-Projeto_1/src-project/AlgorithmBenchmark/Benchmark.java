@@ -1,4 +1,4 @@
-package AlgorithmsBenchmark;
+package AlgorithmBenchmark;
 
 import java.io.BufferedWriter;
 import java.nio.file.Files;
@@ -10,7 +10,12 @@ import Sort.AbstractSort;
 import Sort.InsertionSort;
 import Lists.LinkedList;
 import Lists.List;
-import Sort.MergeSortArrayAuxiliar;
+import Sort.MergeSort;
+import Sort.QuickSortFirstPivot;
+import Sort.QuickSortHibridInsertion;
+import Sort.QuickSortHibridSelection;
+import Sort.QuickSortLastPivot;
+import Sort.SelectionSort;
 
 
 /**
@@ -63,7 +68,7 @@ class Medicao {
  */
 public class Benchmark {
 	private static final int REPETICOES = 1;
-	private static final int AMOSTRAS[] = { 10000 };
+	private static final int AMOSTRAS[] = { 10 };
 
 	/*
 	 * Gera uma lista de valores aleatorios entre zero e tamanhoAleatorio
@@ -92,7 +97,8 @@ public class Benchmark {
 		// implementacoes, onde cada implementacao precisa
 		// implementar a interface AbstractSort.
 
-		AbstractSort arr[] = { new InsertionSort(), new MergeSortArrayAuxiliar() };
+		AbstractSort arr[] = { new QuickSortLastPivot(), new QuickSortFirstPivot(), new QuickSortHibridInsertion(), new QuickSortHibridSelection(),
+				new MergeSort(), new InsertionSort(), new SelectionSort()};
 
 		String nomeArquivo = "bench-" + System.currentTimeMillis();
 		Path arquivo = Paths.get(nomeArquivo);
