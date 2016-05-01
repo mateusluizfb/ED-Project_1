@@ -2,6 +2,7 @@ package SymbolChecker;
 
 import Stack.StackChar;
 
+
 public class SymbolChecker {
 	
 	private String input;

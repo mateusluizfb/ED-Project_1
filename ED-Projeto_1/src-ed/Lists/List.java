@@ -60,9 +60,30 @@ public interface List {
 	 */
 	public int size();
 	
+	/**
+	 * Exibe os elementos da lista em ordem reversa se 'true' e 
+	 * em ordem normal de 'false'
+	 * 
+	 * @param reverse se a os elementos vao ser mostrados em ordem reversa ou nao
+	 */
+	
 	public void show(boolean reverse);
 	
+	/**
+	 * Troca o elemento 'um' pelo elemento 'dois'
+	 * 
+	 * @param index elemento um
+	 * @param index2 elemento dois
+	 */
+	
 	public void swap(int index, int index2);
+	
+	/**
+	 * Recebe um array de inteiros e passa todos seus itens para 
+	 * a Lista
+	 * 
+	 * @param array de inteiros
+	 */
 	
 	public void addAll(int[] array);
 }

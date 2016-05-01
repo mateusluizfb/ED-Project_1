@@ -29,7 +29,7 @@ public class testQuickSortLastPivot extends TestCase {
 	
 	public void testSort(){
 		
-		AbstractSort qs = new QuickSortLastPivot();
+		AbstractSort qs = new QStLastPivot();
 		
 		qs.sort(array);
 				

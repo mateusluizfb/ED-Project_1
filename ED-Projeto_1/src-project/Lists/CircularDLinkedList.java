@@ -1,5 +1,15 @@
 package Lists;
 
+/**
+ * Implementacao de uma CircularDLinkedList que herda de DLinkedList
+ * 
+ * A diferenca entre as duas eh que o primeiro elemento possui uma referencia
+ * para o ultimo e este para o primeiro.
+ * 
+ * @author MateusLuiz
+ *
+ */
+
 public class CircularDLinkedList extends DLinkedList {
 	
 	@Override
