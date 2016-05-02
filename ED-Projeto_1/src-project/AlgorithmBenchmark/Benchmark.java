@@ -11,10 +11,12 @@ import Sort.InsertionSort;
 import Lists.LinkedList;
 import Lists.List;
 import Sort.MergeSort;
-import Sort.QuickSortFirstPivot;
-import Sort.QuickSortHibridInsertion;
-import Sort.QuickSortHibridSelection;
-import Sort.QuickSortLastPivot;
+import Sort.MergeSortHybridInsertion;
+import Sort.MergeSortHybridSelection;
+import Sort.QSFirstPivot;
+import Sort.QSHybridInsertion;
+import Sort.QSHybridSelection;
+import Sort.QStLastPivot;
 import Sort.SelectionSort;
 
 
@@ -67,8 +69,8 @@ class Medicao {
  * @author rbonifacio
  */
 public class Benchmark {
-	private static final int REPETICOES = 1;
-	private static final int AMOSTRAS[] = { 10 };
+	private static final int REPETICOES = 30;
+	private static final int AMOSTRAS[] = { 20, 100, 1000 };
 
 	/*
 	 * Gera uma lista de valores aleatorios entre zero e tamanhoAleatorio
@@ -97,8 +99,8 @@ public class Benchmark {
 		// implementacoes, onde cada implementacao precisa
 		// implementar a interface AbstractSort.
 
-		AbstractSort arr[] = { new QuickSortLastPivot(), new QuickSortFirstPivot(), new QuickSortHibridInsertion(), new QuickSortHibridSelection(),
-				new MergeSort(), new InsertionSort(), new SelectionSort()};
+		AbstractSort arr[] = {/* new QStLastPivot() , new QSFirstPivot(), new QSHybridInsertion(),new QSHybridSelection() ,
+				new MergeSort(), new MergeSortHybridInsertion() , new MergeSortHybridSelection(),*/ new InsertionSort() /*,  new SelectionSort() */ };
 
 		String nomeArquivo = "bench-" + System.currentTimeMillis();
 		Path arquivo = Paths.get(nomeArquivo);

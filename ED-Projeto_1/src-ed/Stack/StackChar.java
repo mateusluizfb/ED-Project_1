@@ -1,5 +1,14 @@
 package Stack;
 
+/**
+ * Stack (pilha) criada para implementar o SymbolChecker.
+ * 
+ * Estah pilha usa o tipo primitivo 'char', diferente da 
+ * interface Stack que usa 'int'
+ * @author MateusLuiz
+ *
+ */
+
 public class StackChar{
 	
 	public char[] elements;

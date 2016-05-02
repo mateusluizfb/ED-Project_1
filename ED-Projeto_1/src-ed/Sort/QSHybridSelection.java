@@ -2,14 +2,21 @@ package Sort;
 
 import Lists.List;
 
-public class QuickSortHibridSelection implements AbstractSort {
+/**
+ * QSHibidInsertion implementa junto ao QuickSort o SelectionSort.
+ * Ele usara o SelectionSort caso o array seja de  até 10 elementos
+ * Caso entre no quickSort, o pivot escolhido vai ser o ultimo elemento. 
+ * 
+ * A descricao de cada metodo se encontra na classe AbstractQuickSort
+ * @author MateusLuiz
+ *
+ */
 
-	private int[] array;
-	
-	@Override
+public class QSHybridSelection extends AbstractQuickSort {
+
 	public List sort(List array) {
 		int size = array.size();
-		if (size <= 10){
+		if (size < 10){
 			selection(array);
 			return array;
 		}
@@ -22,11 +29,11 @@ public class QuickSortHibridSelection implements AbstractSort {
 		return array;
 	}
 	
-	public void quickSort(int left, int right){
+	protected void quickSort(int left, int right){
 		if (right - left <= 0){
 			return;
 		} else {
-			// pivot being last element
+			// pivot sendo o ultimo elemento
 			int pivot = array[right];
 			int partition = partition(left, right, pivot);
 			quickSort(left, partition - 1);
@@ -34,35 +41,14 @@ public class QuickSortHibridSelection implements AbstractSort {
 		}
 	}
 	
-	public int partition(int left, int right, int pivot){
-		
-		int tempLeft = left - 1;
-		int tempRight = right;
-		
-		while(true){
-			
-			while(array[++tempLeft] < pivot);
-			while(array[--tempRight] > pivot && tempRight > 0);
-			
-			if (tempLeft >= tempRight){
-				break;
-			} else {
-				swap(tempLeft, tempRight);
-			}
-		}
-		swap(tempLeft, right);
-		
-		return tempLeft;
-		
-	}
+	/**
+	 * Metodo chamado no metodo sort para se caso
+	 * o array seja de ate 10 elementos
+	 * 
+	 * @param array do tipo List
+	 */
 	
-	public void swap(int index,int index2){
-		int temp = array[index];
-		array[index] = array[index2];
-		array[index2] = temp;
-	}
-	
-	public void selection(List array){
+	protected void selection(List array){
 		int index;
         int size = array.size();
         for (int i = 0; i < size - 1; i++){
