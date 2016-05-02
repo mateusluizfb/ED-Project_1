@@ -1,6 +1,5 @@
 package ExpressionsUriJudge;
 
-import Lists.InvalidArgumentException;
 import junit.framework.TestCase;
 
 public class testUri extends TestCase {
@@ -18,12 +17,8 @@ public class testUri extends TestCase {
 		assertEquals(20, ec.compute("2 10 *"));
 		assertEquals(2, ec.compute("10 5 /"));
 		
-		try{
-			ec.compute("5 + 5");
-		} catch (InvalidArgumentException e){
-			System.out.println(e.getMessage());
-		}
-	
+		ec.compute("5 + 5");
+		ec.compute("+ 2 2");
 		
 		
 	}

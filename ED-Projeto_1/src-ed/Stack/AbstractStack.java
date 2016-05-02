@@ -2,6 +2,14 @@ package Stack;
 
 import Lists.List;
 
+	/**
+	 * Implentacao abstrata de uma Stack (Pilha), a descricao de
+	 * cada metodo estah na documentacao da Interfaace Stack
+	 * 
+	 * Neste Projeto iremos apenas usar a Stack do tipo primitivo Stack
+	 * @author MateusLuiz
+	 */
+
 public abstract class AbstractStack implements Stack{
 	
 	public List elements;

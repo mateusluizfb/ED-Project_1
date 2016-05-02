@@ -2,6 +2,15 @@ package Sort;
 
 import Lists.List;
 
+/**
+ * Implemetacao de um InsertionSort que implementa AbstractSort
+ * para tipos primitivos 'int'
+ * 
+ * A descricao dos metodos utilizados estao em AbstractSort
+ * @author MateusLuiz
+ *
+ */
+
 public class InsertionSort implements AbstractSort{
 
 	public List sort(List array) {

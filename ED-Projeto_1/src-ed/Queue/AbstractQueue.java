@@ -4,7 +4,7 @@ import Lists.List;
 
 /**
  * Implementacao abstrata de uma Queue (Fila), a descricao de cada 
- * metodo estah na documentacao da Intercade Queue 
+ * metodo estah na documentacao da Interface Queue 
  *  
  * Neste projeto iremos apenas usar a Queue do tipo primitivo 'int'
  * @author MateusLuiz

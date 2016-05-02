@@ -6,16 +6,32 @@ import Lists.InvalidArgumentException;
 import Stack.Stack;
 import Stack.StackArrayList;
 
+/**
+ * Classe que implementa uma calculadora posfixa
+ * 
+ * @author MateusLuiz
+ */
 
-public class ExpressionChecker
-	{
+public class ExpressionChecker{
+	
 	   private final char add = '+', sub = '-', multi = '*', div = '/';
 
 	   private Stack stack;
 
+	   /**
+	    * incializa 'stack' com uma StackArrayList
+	    */
 	   public ExpressionChecker(){
 	      stack = new StackArrayList();
 	   }
+	   
+	   /**
+	    * Compute calcula a expressao pos fixa e retorna
+	    * o resultado
+	    * 
+	    * @param string expressao a ser calculada
+	    * @return resultado da expressao
+	    */
 
 	   public int compute(String string){
 
@@ -38,15 +54,25 @@ public class ExpressionChecker
 		            stack.push (new Integer(Integer.parseInt(data)));
 		         }
 	         } catch (InvalidArgumentException e){
-	        	 throw new InvalidArgumentException("Invalid Expression");
+	        	 System.out.println("Invalid Expression");
+	        	 break;
 	         }
 	      }
 	      stack.clear();
 	      return result;
 	   }
 	   
-	   private int result(char ch, int n1, int n2)
-	   {
+	   /**
+	    *  Metodo que efetivamente calcula e retorna o valor 
+	    *  da operacao dada
+	    * 
+	    * @param ch operacao
+	    * @param n1 numero a ser aplicado na operacao
+	    * @param n2 numero2 a ser aplicado na operacao
+	    * @return o resultado da operacao de n1 e n2
+	    */
+	   
+	   protected int result(char ch, int n1, int n2){
 	      int result = 0;
 
 	      switch (ch){
@@ -60,8 +86,15 @@ public class ExpressionChecker
 	      }
 	      return result;
 	   }
+	   
+	   /**
+	    * Checa se o caractere 'data' e igual a alguma operacao
+	    * 
+	    * @param data operacao
+	    * @return true ou false dependendo a operacao
+	    */
 
-	   private boolean check(String data){
+	   protected boolean check(String data){
 	      return ( data.equals("+") || data.equals("-") || data.equals("*") || data.equals("/") );
 	   }	
 }

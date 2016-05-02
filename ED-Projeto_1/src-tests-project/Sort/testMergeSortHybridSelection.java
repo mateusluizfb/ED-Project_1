@@ -1,16 +1,17 @@
 package Sort;
 
+import org.junit.Before;
+
 import Lists.LinkedList;
 import Lists.List;
 import junit.framework.TestCase;
 
-public class testQuickSortHibird extends TestCase {
-
+public class testMergeSortHybridSelection extends TestCase {
+	
 	List array = new LinkedList();
 	
-	protected void setUp() throws Exception {
-		super.setUp();
-		
+	@Before
+	public void setUp() throws Exception {
 		array.insert(0, 8);
 		array.insert(1, 9);
 		array.insert(2, 7);
@@ -19,15 +20,13 @@ public class testQuickSortHibird extends TestCase {
 		array.insert(5, 4);
 		array.insert(6, 3);
 		array.insert(7, 2);
-		
 	}
 	
 	public void testSort(){
 		
-		AbstractSort qs = new QuickSortHibridInsertion();
+		AbstractSort ms = new MergeSortHybridSelection();
 		
-		//enter in debug mode to see InsertionSort in action in QuickSortHibrid 
-		qs.sort(array);
+		ms.sort(array);
 		
 		assertEquals(2, array.elementAt(0));
 		assertEquals(3, array.elementAt(1));
@@ -37,6 +36,7 @@ public class testQuickSortHibird extends TestCase {
 		assertEquals(7, array.elementAt(5));
 		assertEquals(8, array.elementAt(6));
 		assertEquals(9, array.elementAt(7));
+		
+		
 	}
-
 }
