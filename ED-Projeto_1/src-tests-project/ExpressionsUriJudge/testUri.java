@@ -1,6 +1,5 @@
 package ExpressionsUriJudge;
 
-import Lists.InvalidArgumentException;
 import junit.framework.TestCase;
 
 public class testUri extends TestCase {
