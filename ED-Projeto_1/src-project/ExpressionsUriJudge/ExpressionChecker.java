@@ -42,7 +42,7 @@ public class ExpressionChecker{
 	      String data;
 	      StringTokenizer tokenizer = new StringTokenizer(string);
 
-	      while (tokenizer.hasMoreTokens() == true){
+	      while (tokenizer.hasMoreTokens()){
 	         data = tokenizer.nextToken();
 	         try{
 		         if (check(data)){            

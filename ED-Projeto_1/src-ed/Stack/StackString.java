@@ -9,13 +9,13 @@ package Stack;
  *
  */
 
-public class StackChar{
+public class StackString{
 	
-	public char[] elements;
+	public String[] elements;
 	public int size;
 	
-	public StackChar(int size){
-		elements = new char[size];
+	public StackString(int size){
+		elements = new String[size];
 		size = 0;
 	}
 	
@@ -24,13 +24,13 @@ public class StackChar{
 	}
 	
 
-	public void push(char parts) {
+	public void push(String parts) {
 		elements[size] = parts;
 		size++;
 	}
 
-	public char pop() {
-		char value = elements[size - 1];
+	public String pop() {
+		String value = elements[size - 1];
 		size--;
 		return value;
 	}
@@ -49,8 +49,8 @@ public class StackChar{
 	}
 
 
-	public char top() {
-		char value = elements[size-1];
+	public String top() {
+		String value = elements[size-1];
 		return value;
 	}
 }

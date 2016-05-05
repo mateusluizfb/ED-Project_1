@@ -10,6 +10,12 @@ import junit.framework.TestCase;
 public class testBracket extends TestCase {
 	
 	public void testChecker(){
+		
+		//Não foi possivel realizar os testes
+		// unitarios via 'assertEquals()',
+		// logo o teste tem que ser feio via entrada manual de dados
+		
+		//O INPUT DEVE SER FEITO COM ESPACOS 
 			
 		InputStreamReader r=new InputStreamReader(System.in);  
 		BufferedReader br=new BufferedReader(r);  
@@ -23,7 +29,8 @@ public class testBracket extends TestCase {
 		}  
 		
 		SymbolChecker check = new SymbolChecker(bracket);
-			
+		
+		
 		check.checker();
 		
 	}

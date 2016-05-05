@@ -1,6 +1,8 @@
 package SymbolChecker;
 
-import Stack.StackChar;
+import java.util.StringTokenizer;
+
+import Stack.StackString;
 
 
 public class SymbolChecker {
@@ -14,26 +16,32 @@ public class SymbolChecker {
 	public void checker(){
 		
 		int size = input.length();
-		StackChar stack = new StackChar(size);
+		StackString stack = new StackString(size);
 		
-		for(int i = 0; i < size; i++){
-			char c = input.charAt(i);
+		 String c;
+	     StringTokenizer tokenizer = new StringTokenizer(input);
+		
+		while(tokenizer.hasMoreTokens()){
+			c =  tokenizer.nextToken();
 			
 			switch(c){
-				case '{':
-				case '[':
-				case '(':
+				case "begin":
+				case "{":
+				case "[":
+				case "(":
 					stack.push(c);
 					break;
-					
-				case '}':
-				case ']':
-				case ')':
+				
+				case "end":
+				case "}":
+				case "]":
+				case ")":
 					if(stack.size() != 0){
-						char c2 = (char) stack.pop();
-						if ( (c == '}' && c2 == '{') ||
-							 (c == ']' && c2 == '[') ||
-							 (c == ')' && c2 == '(') ){
+						String c2 = stack.pop();
+						if ( (c.equals("}") && c2.equals("{")) ||
+							 (c.equals("]") && c2.equals("[")) ||
+							 (c.equals(")") && c2.equals("(")) ||
+							 (c.equals("end") && c2.equals("begin")) ){
 							System.out.println(c2 + " matches with " + c);
 						} else {
 							System.out.println("Not Valid: " + c2 + " and " + c);
