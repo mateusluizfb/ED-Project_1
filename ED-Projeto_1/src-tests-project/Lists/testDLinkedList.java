@@ -62,5 +62,9 @@ public class testDLinkedList extends TestCase {
 		assertEquals(1, list2.elementAt(3));
 		
 	}
+	
+	public void testShow(){
+		
+	}
 
 }

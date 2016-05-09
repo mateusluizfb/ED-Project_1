@@ -68,6 +68,7 @@ public class DLinkedList implements List {
 				DLinkedNode newNode = new DLinkedNode(value);
 				newNode.setNext(temp.getNext());
 				newNode.setPrevious(temp);
+				newNode.getNext().setPrevious(newNode);
 				temp.setNext(newNode);
 				if(pos < size) {
 					newNode.getNext().setPrevious(newNode);
