@@ -14,7 +14,7 @@ public class testMergeSort extends TestCase {
 	public void setUp() throws Exception {
 		array.insert(0, 4);
 		array.insert(1, 3);
-		array.insert(2, 2);
+		array.insert(2, 2); /// LACUNA COM [4, 3, 2, 1]
 		array.insert(3, 1);
 	}
 	
@@ -32,6 +32,11 @@ public class testMergeSort extends TestCase {
 		AbstractSort ms = new MergeSort();
 		
 		ms.sort(array);
+		
+		System.out.println(array.elementAt(0));
+		System.out.println(array.elementAt(1));
+		System.out.println(array.elementAt(2));
+		System.out.println(array.elementAt(3));
 		
 		assertEquals(1, array.elementAt(0));
 		assertEquals(2, array.elementAt(1));

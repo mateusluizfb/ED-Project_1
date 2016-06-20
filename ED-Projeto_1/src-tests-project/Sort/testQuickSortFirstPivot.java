@@ -23,6 +23,11 @@ public class testQuickSortFirstPivot extends TestCase {
 		AbstractSort qs = new QStLastPivot();
 		
 		qs.sort(array);
+		
+		System.out.println(array.elementAt(0));
+		System.out.println(array.elementAt(1));
+		System.out.println(array.elementAt(2));
+		System.out.println(array.elementAt(3));
 				
 		assertEquals(6, array.elementAt(0));
 		assertEquals(7, array.elementAt(1));
