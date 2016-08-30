@@ -45,3 +45,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Some other configuration files
+/ED-Projeto_1/bin
+/ED-Projeto_1/.settings
+/ED-Projeto_1/.classpath
+/ED-Projeto_1/.project
